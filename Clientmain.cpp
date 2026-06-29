@@ -33,7 +33,7 @@ void proc_recv()
 		{
 			break;
 		}
-		cout << "»ó´ë : " << buffer << " - " << t->tm_hour << "½Ã : " << t->tm_min << "ºÐ : " << t->tm_sec << "ÃÊ" << endl;
+		cout << "ìƒëŒ€ : " << buffer << " - " << t->tm_hour << "ì‹œ : " << t->tm_min << "ë¶„ : " << t->tm_sec << "ì´ˆ" << endl;
 	}
 }
 
@@ -53,7 +53,7 @@ int main()
 	sAddr.sin_port = htons(7777);
 
 	connect(skt, (SOCKADDR*)&sAddr, sizeof(sAddr));
-	cout << "Server¿Í ¿¬°áµÇ¾ú½À´Ï´Ù." << '\n';
+	cout << "Serverì™€ ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤." << '\n';
 
 
 	thread proc1(proc_recv);
@@ -62,7 +62,7 @@ int main()
 
 	while (!WSAGetLastError())
 	{
-		//cout << "Ã¤ÆÃÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+		//cout << "ì±„íŒ…ì„ ìž…ë ¥í•´ì£¼ì„¸ìš” : ";
 		cin >> buffer;
 		send(skt, buffer, strlen(buffer), 0);
 	}
